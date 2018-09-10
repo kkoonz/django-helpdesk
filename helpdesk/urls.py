@@ -18,7 +18,8 @@ from django.urls import path
 from django.urls import include
 from django.conf.urls import url
 from markdownx import urls as markdownx
-from faq import views
+from faq import views as views_faq
+from mon import views as views_mon
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,6 +28,7 @@ urlpatterns = [
     path('faq/', include('faq.urls')), #FAQ앱
     path('kakao/', include('kakao.urls')), #kakao
     path('chat/', include('chat.urls')), #kakao
-    path('', views.home), #index 연결
+    path('mon/', views_mon.index), #서비스 모니터링
+    path('', views_faq.home), #index 연결
     url(r'^markdownx/', include('markdownx.urls')), #markdownx 앱
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
