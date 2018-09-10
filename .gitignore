@@ -1,0 +1,11 @@
+__pycache__
+Lib
+Scripts
+media
+.git
+db.sqlite3
+helpdesk.sublime-project
+helpdesk.sublime-workspace
+manage.py
+pip-selfcheck.json
+pyvenv.cfg
