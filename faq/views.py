@@ -6,9 +6,6 @@ def home(request):
     context = { 'latest_answer_list':latest_answer_list }
     return render(request, 'home.html', context)
 
-def list(request): #미구현
-    return render(request, 'home.html', context)
-
 def detail(request, answer_id):
     try:
         answer = Answer.objects.get(pk=answer_id)

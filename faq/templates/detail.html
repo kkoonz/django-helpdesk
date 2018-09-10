@@ -2,22 +2,22 @@
 {% load static %}
 {% block content %}
 {% if answer %}
-    <!-- Page Heading -->
-        <!-- Header - set the background image for the header in the line below -->
-    <header class="py-5 bg-image-full" style="background-image: url('{% if answer.photo %}{{ answer.photo.url }}{% else %}{% static 'images/no-image.png' %}{% endif %}');">
-      <h1 class="my-4 detail_header">{{ answer.title }}</h1>
-    </header>
-        
-    <div class="py-5">
-      <div>{{ answer.formatted_markdown|safe }}</div>
-      {% if answer.attach %}
-        <hr>
-        <div class="detail_download"># 첨부파일: <i class="fas fa-download"></i> <a href="{{ answer.attach.url }}">{{ answer.attach.name }} </a></div>
-      {% endif %}
-      <hr>
-      <div class="text-center"><button class="btn btn-primary" id="btn_back"><i class="fas fa-undo"></i> 되돌아가기</button></div>
-    </div>
+<!-- Page Heading -->
+<!-- Header - set the background image for the header in the line below -->
+<header class="py-5 bg-image-full" style="background-image: url('{% if answer.photo %}{{ answer.photo.url }}{% else %}{% static 'images/no-image.png' %}{% endif %}');">
+  <h1 class="my-4 detail_header">{{ answer.title }}</h1>
+</header>
+    
+<div class="py-5">
+  <div>{{ answer.formatted_markdown|safe }}</div>
+  {% if answer.attach %}
+    <hr>
+    <div class="detail_download"># 첨부파일: <i class="fas fa-download"></i> <a href="{{ answer.attach.url }}">{{ answer.attach.name }} </a></div>
+  {% endif %}
+  <hr>
+  <div class="text-center"><button class="btn btn-primary" id="btn_back"><i class="fas fa-undo"></i> 되돌아가기</button></div>
+</div>
 {% else %}
-    <p>No answer.</p>
+<p>No answer.</p>
 {% endif %}
 {% endblock %}

@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.conf.urls import url
+from markdownx import urls as markdownx
+from faq import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('faq', include('faq.urls')),
-]
+    path('admin/', admin.site.urls), #기본 관리자 앱
+    path('faq/', include('faq.urls')), #FAQ앱
+    path('kakao/', include('kakao.urls')), #kakao
+    path('', views.home), #index 연결
+    url(r'^markdownx/', include('markdownx.urls')), #markdownx 앱
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

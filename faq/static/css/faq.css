@@ -28,6 +28,7 @@ body {
 
 h1.detail_header {
     text-shadow: 1px 1px #fff, 0 0 5px #fff;
+    padding-left: 1rem;
 }
 
 div.detail_download {
