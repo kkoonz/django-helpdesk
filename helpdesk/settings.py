@@ -25,7 +25,8 @@ SECRET_KEY = 'r!ly#15+b0_m%tp5sirh5@ra#z5_-(v%7m9pvf!g%+xjaro29*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kkoon.duckdns.org']
 
 
 # Application definition
