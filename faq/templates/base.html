@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/all.css' %}">
+        <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+        <script src="{% static 'js/faq.js' %}"></script>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="{% url 'faq:home' %}">Global e-Campus Helpdesk</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'faq:home' %}">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#oops">Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#fordevelop">For Developer</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="mailto:kkoon79@gmail.com">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <!-- Page Content -->
+        <div class="container">
+{% block content %}
+{% endblock %}
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">COPYRIGHT &copy; 2016 HYUNDAI AUTOEVER CORP. ALL RIGHTS RESERVED.</p>
+          </div>
+          <!-- /.container -->
+        </footer>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="oops" tabindex="-1" role="dialog" aria-labelledby="oops" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">안내문</h5>
+              </div> -->
+              <div class="modal-body">
+                준비중입니다.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> 닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="fordevelop" tabindex="-1" role="dialog" aria-labelledby="fordevelop" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                개발 매뉴얼로 이동하시겠습니까?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_manual"><i class="fas fa-arrow-alt-circle-right"></i> 이동</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> 닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

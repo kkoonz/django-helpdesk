@@ -1,0 +1,36 @@
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.bg-image-full {
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+/*.card-img-top { height: 300px; }*/
+
+h1.detail_header {
+    text-shadow: 1px 1px #fff, 0 0 5px #fff;
+}
+
+div.detail_download {
+    width: 100%;
+    margin: 0 0 1em;
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Recently Answers</h1>
+
+{% if latest_answer_list %}
+    <div class="row">
+      {% for ans in latest_answer_list %}
+      
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card d-block">
+            <a href="{% url 'faq:detail' answer_id=ans.id %}"><img class="card-img-top" src="{% if ans.photo %}{{ ans.photo.url }}{% else %}{% static 'images/no-image.png' %}{% endif %}" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="/{{ ans.id }}">{{ ans.title }}</a>
+              </h4>
+              <p class="card-text">{{ ans.formatted_markdown|safe|striptags|truncatechars:200 }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+      <!-- /.row -->
+
+      <!-- Pagination -->
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+{% else %}
+    <p>Hello world!</p>
+{% endif %}
+{% endblock %}
