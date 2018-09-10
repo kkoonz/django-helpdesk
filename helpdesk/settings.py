@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'markdownx',
     'faq',
     'kakao',
+    'chat',
 ]
 
 MIDDLEWARE = [
