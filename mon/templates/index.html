@@ -3,7 +3,11 @@
 {% block content %}
     
 <div class="py-5">
-  
+  <ol>
+  {% for res in results %}
+    <li>{{ res.0 }} >> <span style="color:{{ res.3 }}">{{ res.2 }}</span></li>
+  {% endfor %}  
+  </ol>
   <hr>
   <div class="text-center"><button class="btn btn-primary" id="btn_back"><i class="fas fa-undo"></i> 되돌아가기</button></div>
 </div>
